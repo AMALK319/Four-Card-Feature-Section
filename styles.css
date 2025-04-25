@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+
+:root{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --darkGrey: hsl(234, 12%, 34%);
+    --lightGrey: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    
+   
+}
+
+.light-title{
+    color: var(--lightGrey);
+    font-weight: 200;
+}
+
+.dark-title{
+    color: var(--darkGrey);
+    font-weight: 500;
+}
+
+.text-content p{
+    color: var(--lightGrey);
+    font-size: 14px;
+    max-width: 500px;
+}
+
+.cards-content{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0 0 0 / 30%);
+    padding: 30px;
+    height: fit-content;
+    width: 280px;
+}
+
+.card-text h4{
+    color: var(--darkGrey);
+}
+
+.card-text p{
+    color: var(--lightGrey);
+    font-size: 12px;
+}
+
+.card .icon{
+    display: flex;
+    justify-content: end;
+}
+
+.card-cyan{
+    border-top: 4px solid var(--cyan);
+}
+
+.card-blue{
+    border-top: 4px solid var(--blue);
+}
+
+.card-orange{
+    border-top: 4px solid var(--orange);
+}
+
+.card-red{
+    border-top: 4px solid var(--red);
+}
+
+@media (min-width: 768px) {
+  
+    .card-cyan{
+        grid-area: second-card
+    }
+    
+    .card-blue{
+        grid-area: last-card
+    }
+    
+    .card-orange{
+        grid-area: third-card
+    }
+    
+    .card-red{
+        grid-area: first-card
+    }
+    .cards-content{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+          " . first-card ."
+          "second-card first-card third-card"
+          "second-card last-card third-card"
+          ".last-card .";
+        }
+    }
+
